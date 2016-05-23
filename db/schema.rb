@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518133666) do
+ActiveRecord::Schema.define(version: 20160520131300) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -388,7 +388,7 @@ ActiveRecord::Schema.define(version: 20160518133666) do
   add_index "spree_product_properties", ["property_id"], name: "index_spree_product_properties_on_property_id"
 
   create_table "spree_products", force: :cascade do |t|
-    t.string   "name",                 default: "",   null: false
+    t.string   "name",                 default: "",    null: false
     t.text     "description"
     t.datetime "available_on"
     t.datetime "deleted_at"
@@ -397,10 +397,13 @@ ActiveRecord::Schema.define(version: 20160518133666) do
     t.string   "meta_keywords"
     t.integer  "tax_category_id"
     t.integer  "shipping_category_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.boolean  "promotionable",        default: true
     t.string   "meta_title"
+    t.boolean  "published",            default: false
+    t.datetime "published_at"
+    t.integer  "publisher_id"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
