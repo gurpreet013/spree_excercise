@@ -9,11 +9,10 @@ Spree::Admin::ProductsController.class_eval do
     end
 
     #this part is added
-    if params[:product][:published].present?
-      params[:product][:published_at] = DateTime.current
+
+    if params[:product][:published].eql?('1')
       params[:product][:publisher_id] = spree_current_user.id
     else
-      params[:product][:published_at] = nil
       params[:product][:publisher_id] = nil
     end
 
