@@ -11,7 +11,7 @@ Spree::Admin::ProductsController.class_eval do
     #this part is added
 
     if params[:product][:published].eql?('1')
-      params[:product][:publisher_id] = spree_current_user.id
+      @object.publisher = spree_current_user.id
     else
       params[:product][:publisher_id] = nil
     end
