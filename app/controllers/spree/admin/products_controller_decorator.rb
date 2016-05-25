@@ -9,12 +9,7 @@ Spree::Admin::ProductsController.class_eval do
     end
 
     #this part is added
-
-    if params[:product][:published].eql?('1')
-      @object.publisher = spree_current_user.id
-    else
-      params[:product][:publisher_id] = nil
-    end
+    @object.publisher = params[:product][:published].eql?('1') ? spree_current_user : nil
 
     invoke_callbacks(:update, :before)
     if @object.update_attributes(permitted_resource_params)
