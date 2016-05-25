@@ -44,7 +44,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-gem 'spree_add_delivered_state', path: '/home/hp-15-4/Training/spree/spree_add_delivered_state', branch: 'develop'
+gem 'spree_add_delivered_state', git: 'https://github.com/gurpreet013/spree_shipment_delivery.git', branch: 'develop'
 gem 'spree', '~> 3.0.9'
 gem 'spree_gateway', '~> 3.0.0'
 gem 'spree_auth_devise', '~> 3.0.0'

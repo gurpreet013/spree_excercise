@@ -1,5 +1,7 @@
-PATH
-  remote: /home/hp-15-4/Training/spree/spree_add_delivered_state
+GIT
+  remote: https://github.com/gurpreet013/spree_shipment_delivery.git
+  revision: 55cecdc1a3534e51a2a726d9c635bba2a8bd4fe8
+  branch: develop
   specs:
     spree_add_delivered_state (3.0.9)
       spree_core (~> 3.0.9)
